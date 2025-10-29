@@ -8,8 +8,8 @@
         body {
             margin: 0;
             height: 100vh;
-            background: linear-gradient(to bottom, #0a1a2f, #1c3a5d);
-            color: #f5f5f5;
+            background: linear-gradient(to bottom, #d7f3f1, #bde4e0);
+            color: #2c3e3d;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -21,15 +21,15 @@
         h1 {
             font-size: 2em;
             margin-bottom: 20px;
-            color: #ffed8a;
-            text-shadow: 0 0 10px rgba(255,215,0,0.3);
+            color: #2c7a7b;
+            text-shadow: 0 0 10px rgba(44, 122, 123, 0.15);
         }
         .quote-box {
             max-width: 800px;
-            background: rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.6);
             padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(44, 122, 123, 0.2);
             margin-bottom: 25px;
         }
         .arabic {
@@ -37,32 +37,34 @@
             line-height: 1.6;
             direction: rtl;
             font-family: "Scheherazade New", serif;
+            color: #1b4d4f;
             margin-bottom: 15px;
         }
         .translation, .inspirational {
-            font-size: 1.3em;
+            font-size: 1.2em;
             line-height: 1.6;
-            color: #e0e0e0;
+            color: #325e5f;
             margin-top: 10px;
         }
         button {
-            background-color: #ffd700;
-            color: #0a1a2f;
+            background-color: #a8edea;
+            color: #1b4d4f;
             border: none;
             padding: 12px 24px;
             font-size: 1em;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
+            box-shadow: 0 3px 8px rgba(27, 77, 79, 0.2);
         }
         button:hover {
-            background-color: #f0c000;
+            background-color: #94dcd9;
             transform: scale(1.05);
         }
     </style>
 </head>
 <body>
-    <h1>🌙 A Teacher's Moment of Peace</h1>
+    <h1>🌿 A Teacher's Moment of Peace</h1>
     <div class="quote-box">
         <div class="arabic" id="arabic"></div>
         <div class="translation" id="translation"></div>
@@ -72,35 +74,16 @@
 
     <script>
         const quotes = [
-            // Qur’anic verses (Arabic + English translation)
             {arabic: "إِنَّ مَعَ الْعُسْرِ يُسْرًا", translation: "Indeed, with hardship comes ease. (Surah Ash-Sharh 94:6)", inspirational: ""},
             {arabic: "وَمَنْ يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ", translation: "And whoever puts their trust in Allah — He will suffice them. (Surah At-Talaq 65:3)", inspirational: ""},
             {arabic: "وَلَا تَيْأَسُوا مِن رَّوْحِ اللَّهِ", translation: "Do not despair of the mercy of Allah. (Surah Az-Zumar 39:53)", inspirational: ""},
             {arabic: "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا", translation: "So verily, with every difficulty, there is relief. (Surah Ash-Sharh 94:5)", inspirational: ""},
-            {arabic: "وَمَا أَنزَلْنَا عَلَيْكَ الْكِتَابَ إِلَّا لِتُبَيِّنَ لَهُمُ الَّذِي اخْتَلَفُوا فِيهِ", translation: "And We have sent down the Book to you to explain to them that in which they differ. (Surah An-Nahl 16:64)", inspirational: ""},
-            {arabic: "وَاعْبُدُوا اللَّهَ وَلَا تُشْرِكُوا بِهِ شَيْئًا", translation: "Worship Allah and do not associate anything with Him. (Surah An-Nisa 4:36)", inspirational: ""},
-            {arabic: "وَاذْكُرُوا اللَّهَ كَثِيرًا لَعَلَّكُمْ تُفْلِحُونَ", translation: "And remember Allah much so that you may succeed. (Surah Al-Jumu'ah 62:10)", inspirational: ""},
-            {arabic: "رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا", translation: "Our Lord, let not our hearts deviate after You have guided us. (Surah Aal-Imran 3:8)", inspirational: ""},
-            {arabic: "الَّذِينَ يُؤْمِنُونَ بِالْغَيْبِ وَيُقِيمُونَ الصَّلَاةَ", translation: "Those who believe in the unseen and establish prayer. (Surah Al-Baqarah 2:3)", inspirational: ""},
             {arabic: "وَقُلِ اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ", translation: "And say: Do [good] deeds; Allah will see your deeds. (Surah At-Tawbah 9:105)", inspirational: ""},
-
-            // Islamic teacher quotes
             {arabic: "", translation: "", inspirational: "A teacher who guides a student in beneficial knowledge is rewarded every time the student benefits. (Sahih Muslim)"},
             {arabic: "", translation: "", inspirational: "Seeking knowledge and sharing it is a form of charity; your efforts as a teacher bring ongoing reward. (Sahih Al-Bukhari)"},
             {arabic: "", translation: "", inspirational: "Every lesson you teach sincerely increases your reward and brings blessings upon you and your students."},
-            {arabic: "", translation: "", inspirational: "The Prophet ﷺ said: 'Whoever guides someone to goodness will have a reward like that of the one who did it.' (Sahih Muslim)"},
             {arabic: "", translation: "", inspirational: "Patience and care in teaching are counted as acts of worship and bring Allah’s pleasure."},
-            {arabic: "", translation: "", inspirational: "The reward for a teacher is continuous as long as their students benefit from their guidance. (Hadith)"},
-            {arabic: "", translation: "", inspirational: "Imparting knowledge to others brings blessings both in this life and the next."},
-            {arabic: "", translation: "", inspirational: "A teacher’s supplication for their students is answered by Allah."},
-            {arabic: "", translation: "", inspirational: "Teaching with sincerity is a path to Jannah. (Inspired by Hadith guidance)"},
-            {arabic: "", translation: "", inspirational: "Even small guidance given to a student can earn immense reward in the sight of Allah."},
-            {arabic: "", translation: "", inspirational: "Your patience in teaching is valued greatly in the eyes of Allah."},
-            {arabic: "", translation: "", inspirational: "Every sincere effort to teach is recorded as an act of worship."},
-            {arabic: "", translation: "", inspirational: "The knowledge you impart benefits you as long as it continues to benefit others. (Sahih Muslim)"},
-            {arabic: "", translation: "", inspirational: "A teacher’s role is noble and brings immense spiritual reward."},
-            {arabic: "", translation: "", inspirational: "Guiding students is a charity whose reward never diminishes."},
-            {arabic: "", translation: "", inspirational: "A teacher who inspires a student towards Allah earns reward from every act of that student."}
+            {arabic: "", translation: "", inspirational: "Even small guidance given to a student can earn immense reward in the sight of Allah."}
         ];
 
         function showRandomQuote() {
